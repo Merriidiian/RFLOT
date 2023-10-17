@@ -4,11 +4,13 @@ import { RouterModule } from '@angular/router';
 
 import { EmptyLayoutComponent } from './empty-layout/empty-layout.component';
 import { InnerLayoutComponent } from './inner-layout/inner-layout.component';
+import { MaterialModule } from '../material.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    MaterialModule,
   ],
   declarations: [
     EmptyLayoutComponent,

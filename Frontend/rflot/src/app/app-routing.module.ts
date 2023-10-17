@@ -9,7 +9,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'app/search',
+    redirectTo: 'search',
     pathMatch: 'full',
   },
   {

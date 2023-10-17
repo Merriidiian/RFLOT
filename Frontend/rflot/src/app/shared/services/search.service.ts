@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { SearchDTO } from 'src/app/models/search.dto';
-import { BadEquipsDTO } from 'src/app/models/plane.dto';
+import { PlaneDTO } from 'src/app/models/plane.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ import { BadEquipsDTO } from 'src/app/models/plane.dto';
 export class SearchService {
   constructor(private http: HttpClient) {}
 
-  search(body: SearchDTO): Observable<BadEquipsDTO> {
-    return this.http.post<BadEquipsDTO>('/api/search', body);
+  search(body: SearchDTO): Observable<PlaneDTO> {
+    return this.http.post<PlaneDTO>('/api/search', body);
   }
 }

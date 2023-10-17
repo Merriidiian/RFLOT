@@ -6,7 +6,7 @@ import { PlaneDTO } from 'src/app/models/plane.dto';
   providedIn: 'root',
 })
 export class SessionStorageService {
-  saveUser(plane: PlaneDTO): void {
+  savePlane(plane: PlaneDTO): void {
     sessionStorage.setItem('plane', JSON.stringify(plane));
   }
 
