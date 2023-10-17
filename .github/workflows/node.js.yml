@@ -38,6 +38,7 @@ jobs:
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
           npm ci
+        working-directory: 'Frontend/rflot/'
 
       - name: Build
         run: |
