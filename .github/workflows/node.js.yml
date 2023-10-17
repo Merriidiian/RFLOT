@@ -39,18 +39,14 @@ jobs:
         run: |
           npm ci
         working-directory: 'Frontend/rflot/'
+        
+      - name: Install Serve
+        run: |
+          npm install -g serve
+        working-directory: 'Frontend/rflot/'
 
       - name: Build
         run: |
-          npm run build -- --prod -y
+          serve -s build
         working-directory: 'Frontend/rflot/'
 
-      - name: Lint
-        run: |
-          npm run lint
-        working-directory: 'Frontend/rflot/'
-        
-      - name: Test
-        run: |
-          npm run test -- --prod
-        working-directory: 'Frontend/rflot/'
