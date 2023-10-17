@@ -26,5 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: Frontend/rflot npm ci
-    - run: Frontend/rflot npm run start
+        cache-dependency-path: 'Frontend/rflot/package-lock.json'
+    - run: npm ci
+      working-directory: 'Frontend/rflot/'
+    - run: npm run start
+      working-directory: 'Frontend/rflot/'
