@@ -42,7 +42,7 @@ jobs:
 
       - name: Build
         run: |
-          npm run build -- --prod
+          npm run build -- --prod -y
         working-directory: 'Frontend/rflot/'
 
       - name: Lint
