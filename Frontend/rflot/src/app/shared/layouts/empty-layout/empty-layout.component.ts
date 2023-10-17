@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-empty-layout',
-  templateUrl: './empty-layout.component.html',
-  styleUrls: ['./empty-layout.component.css']
+  template: `
+    <main class="empty-layout">
+      <router-outlet></router-outlet>
+    </main>
+  `,
+  styles: [
+    `
+      .empty-layout {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    `
+  ]
 })
-export class EmptyLayoutComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class EmptyLayoutComponent {}

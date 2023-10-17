@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmptyLayoutComponent } from './empty-layout.component';
+import { ChooseCheckComponent } from './choose-check.component';
 
-describe('EmptyLayoutComponent', () => {
-  let component: EmptyLayoutComponent;
-  let fixture: ComponentFixture<EmptyLayoutComponent>;
+describe('ChooseCheckComponent', () => {
+  let component: ChooseCheckComponent;
+  let fixture: ComponentFixture<ChooseCheckComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmptyLayoutComponent ]
+      declarations: [ ChooseCheckComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmptyLayoutComponent);
+    fixture = TestBed.createComponent(ChooseCheckComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
