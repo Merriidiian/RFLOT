@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { DateAdapter } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PlaneDTO } from 'src/app/models/plane.dto';
@@ -11,9 +12,10 @@ import { SessionStorageService } from 'src/app/shared/services/session-storage.s
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit{
   form = this.fb.group({
     planeId: [null, Validators.required],
+    date: [null, Validators.required],
   });
 
   private subscriptions$ = new Subscription();
@@ -23,7 +25,12 @@ export class SearchComponent {
     private sessionStorage: SessionStorageService,
     private router: Router,
     private fb: FormBuilder,
+    private dateAdapter: DateAdapter<any>
   ) {}
+
+  ngOnInit(): void {
+    this.dateAdapter.setLocale('ru');
+  }
 
   ngOnDestroy(): void {
     this.subscriptions$.unsubscribe();
