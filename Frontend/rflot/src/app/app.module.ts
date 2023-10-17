@@ -10,12 +10,11 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { SearchComponent } from './pages/search/search.component';
-import { ChooseCheckComponent } from './choose-check/choose-check.component';
+import { ChooseCheckComponent } from './pages/choose-check/choose-check.component';
 
 import { LayoutsModule } from './shared/layouts/layouts.module';
 import { MaterialModule } from './shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   imports: [
