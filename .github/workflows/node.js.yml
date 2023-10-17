@@ -19,6 +19,7 @@ jobs:
         node-version: [16.x, 19.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -27,7 +28,19 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: 'Frontend/rflot/package-lock.json'
-    - run: npm ci
-      working-directory: 'Frontend/rflot/'
-    - run: npm run start
-      working-directory: 'Frontend/rflot/'
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm run test:headless
+
+    - name: Build
+      run: npm run build:prod
+
+    - name: Deploy
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist/angular-github-actions
+        enable_jekyll: true
