@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { SearchComponent } from './pages/search/search.component';
+import { ChooseCheckComponent } from './choose-check/choose-check.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     ErrorComponent,
-    SearchComponent
+    SearchComponent,
+    ChooseCheckComponent
   ],
   imports: [
     BrowserModule,
