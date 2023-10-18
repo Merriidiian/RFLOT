@@ -40,6 +40,11 @@ jobs:
           npm ci
         working-directory: 'Frontend/rflot/'
         
+      - name: Install npm
+        run: |
+          npm install
+        working-directory: 'Frontend/rflot/'
+
       - name: Install Cli
         run: |
           npm install -g @angular/cli
