@@ -42,6 +42,6 @@ jobs:
 
       - name: Build
         run: |
-          ng serve --proxy-config proxy.conf.json
+          ng serve
         working-directory: 'Frontend/rflot/'
 
