@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span>Дашборд</span>
+  <div class="user" *ngIf="plane">
+    <div class="user-info">
+      <mat-icon fontIcon="plane"></mat-icon>
+      <small>{{ plane?.idPlane }}</small>
+    </div>
+    <button mat-raised-button (click)="exit()">Выйти</button>
+  </div>
+</mat-toolbar>
+<main class="inner-layout">
+  <router-outlet></router-outlet>
+</main>
