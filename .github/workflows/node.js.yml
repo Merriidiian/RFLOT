@@ -47,6 +47,6 @@ jobs:
 
       - name: Build
         run: |
-          npm run ng build
+          ng build
         working-directory: 'Frontend/rflot/'
 
