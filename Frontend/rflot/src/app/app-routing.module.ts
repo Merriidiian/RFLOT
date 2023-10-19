@@ -5,6 +5,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { EmptyLayoutComponent } from './shared/layouts/empty-layout/empty-layout.component';
 import { InnerLayoutComponent } from './shared/layouts/inner-layout/inner-layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ChooseCheckComponent } from './pages/choose-check/choose-check.component';
 
 const routes: Routes = [
   {
@@ -21,10 +22,17 @@ const routes: Routes = [
         component: EmptyLayoutComponent,
         children: [{ path: '', component: SearchComponent }],
       },
+
       {
         path: 'app',
         component: InnerLayoutComponent,
         children: [{ path: 'dashboard', component: DashboardComponent }],
+      },
+
+      {
+        path: 'app',
+        component: InnerLayoutComponent,
+        children: [{ path: 'choose', component: ChooseCheckComponent }],
       },
     ]
   },

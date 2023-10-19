@@ -10,7 +10,7 @@ export class SessionStorageService {
     sessionStorage.setItem('plane', JSON.stringify(plane));
   }
 
-  getPlane(): PlaneDTO | null {
+  getPlane(): PlaneDTO[] | null {
     const plane = sessionStorage.getItem('plane');
     if (plane) {
       try {

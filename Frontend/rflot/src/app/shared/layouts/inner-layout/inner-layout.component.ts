@@ -10,13 +10,13 @@ import { PlaneDTO } from 'src/app/models/plane.dto';
   styleUrls: ['./inner-layout.component.css'],
 })
 export class InnerLayoutComponent {
-  plane: PlaneDTO | null = null;
+  plane: PlaneDTO[] = [];
 
   constructor(
     private sessionStorage: SessionStorageService,
     private router: Router
   ) {
-    this.plane = this.sessionStorage.getPlane();
+    this.plane = this.sessionStorage.getPlane() || [];
   }
 
   exit(): void {
