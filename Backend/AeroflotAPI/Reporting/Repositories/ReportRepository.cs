@@ -1,4 +1,5 @@
 ﻿using AeroflotAPI.Models;
+using AeroflotAPI.Reporting.DTOs;
 
 namespace AeroflotAPI.Repositories;
 
@@ -23,5 +24,15 @@ public class ReportRepository : IReportRepository
         {
             return false;
         }
+    }
+
+    public async Task<IEnumerable<ReportZone>> GetReportInfoByPlaneAndData(string planeId, DateTime data)
+    {
+        var info = _context.ReportZones;
+        var infoByPlane = info.Where(
+            i => i.IdPlane == planeId).ToList();
+        var infoByData = infoByPlane.Where(d => d.DateTimeStartGroup.Date == data.Date);
+        await _context.AddRangeAsync();
+        return infoByData;
     }
 }

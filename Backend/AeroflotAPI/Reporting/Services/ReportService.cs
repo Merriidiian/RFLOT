@@ -42,4 +42,28 @@ public class ReportService : IReportService
         var result = await _repository.AddReportZone(zoneModel);
         return result;
     }
+
+    public async Task<IEnumerable<ReportInfoByPlaneAndData>> GetReportInfoByPlaneAndData(string planeId, DateTime data)
+    {
+        var info = await _repository.GetReportInfoByPlaneAndData(planeId, data);
+        var list = info.Select(i => new ReportInfoByPlaneAndData
+            {
+                PlaneId = i.IdPlane,
+                Zone = i.ZoneName,
+                DataBegin = i.DateTimeStartGroup.ToString("MM/dd/yyyy hh:mm:ss"),
+                DataEnd = i.DateTimeFinishGroup.ToString("MM/dd/yyyy hh:mm:ss"),
+                Type = i.TypeCheck
+            });
+        var reportInfoByPlaneAndDatas = list.ToList();
+        foreach (var report in reportInfoByPlaneAndDatas)
+        {
+            report.Type = report.Type switch
+            {
+                "1" => "Предполетная",
+                "2" => "Постполетная",
+                _ => report.Type
+            };
+        }
+        return reportInfoByPlaneAndDatas;
+    }
 }
