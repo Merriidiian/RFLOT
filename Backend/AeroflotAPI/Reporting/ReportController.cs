@@ -1,5 +1,6 @@
 ﻿using AeroflotAPI.Reporting.DTOs;
 using AeroflotAPI.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AeroflotAPI.Reporting;
@@ -31,6 +32,19 @@ public class ReportController : ControllerBase
         catch (Exception e)
         {
             return NotFound("Ошибка отправки отчёта");
-        }   
+        }
+    }
+
+    [Route("get-zones")]
+    [HttpGet]
+    [Produces("application/json")]
+
+    public async Task<IActionResult> GetZones(string planeId, DateTime data)
+    {
+        var result = await _service.GetReportInfoByPlaneAndData(planeId, data);
+        if (result.Count() != 0)
+            return Ok(result);
+        else
+            return NotFound();
     }
 }
