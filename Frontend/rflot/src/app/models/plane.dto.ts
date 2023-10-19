@@ -1,11 +1,11 @@
 export interface PlaneDTO {
   idZone: string, 
   idChecker: string,
-  typeCheck: string,
+  type: string,
   zoneName: string,
-  idPlane: string,
-  dateTimeStartGroup: string,
-  dateTimeFinishGroup: string,
+  planeId: string,
+  dataBegin: string,
+  dataEnd: string,
   badEquips: BadEquipsDTO[],
 };
 

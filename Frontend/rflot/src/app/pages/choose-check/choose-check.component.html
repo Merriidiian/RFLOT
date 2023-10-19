@@ -1,7 +1,22 @@
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="name">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+  <ng-container matColumnDef="planeId">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> planeId </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element"> {{ element.planeId }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="dataBegin">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> dataBegin </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element"> {{ element.dataBegin }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="dataEnd">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> dataEnd </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element"> {{ element.dataEnd }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> type </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element"> {{ element.type }} </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

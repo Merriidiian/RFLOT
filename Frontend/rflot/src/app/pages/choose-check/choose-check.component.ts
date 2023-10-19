@@ -22,10 +22,10 @@ const ELEMENT_DATA = [
 })
 export class ChooseCheckComponent implements OnInit {
   displayedColumns: string[] = [
-    'idPlane',
-    'dateTimeStartGroup',
-    'dateTimeFinishGroup',
-    'typeCheck',
+    'planeId',
+    'dataBegin',
+    'dataEnd',
+    'type',
   ];
 
   dataSource: PlaneDTO[] = [];

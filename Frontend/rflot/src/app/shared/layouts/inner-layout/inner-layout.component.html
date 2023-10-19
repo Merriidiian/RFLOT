@@ -3,9 +3,9 @@
   <div class="user" *ngIf="plane">
     <div class="user-info">
       <mat-icon fontIcon="plane"></mat-icon>
-      <small>{{ plane[0]?.idPlane }}</small>
+      <small>{{'ID самолета: ' + plane[0]?.planeId }}</small>
     </div>
-    <button mat-raised-button (click)="exit()">Выйти</button>
+    <!-- <button mat-raised-button (click)="exit()">Выйти</button> -->
   </div>
 </mat-toolbar>
 <main class="inner-layout">
