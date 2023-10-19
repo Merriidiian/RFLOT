@@ -1,6 +1,6 @@
 {
-  "/api/*": {
-    "target": "http://localhost:5000",
+  "/aeroflot/*": {
+    "target": "http://10.91.90.154:8084",
     "secure": false,
     "logLevel": "debug"
   }
