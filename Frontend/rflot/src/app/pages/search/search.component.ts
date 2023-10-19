@@ -41,7 +41,7 @@ export class SearchComponent implements OnInit{
       this.subscriptions$.add(
         this.searchService.search(this.form.value).subscribe((data: PlaneDTO) => {
           this.sessionStorage.savePlane(data);
-          this.router.navigate(['/app/dashboard']);
+          this.router.navigate(['/app/choose']);
           }
         )
       );

@@ -1,9 +1,9 @@
 <mat-toolbar color="primary" class="toolbar">
-  <span>Дашборд</span>
+  <span>Отчет</span>
   <div class="user" *ngIf="plane">
     <div class="user-info">
       <mat-icon fontIcon="plane"></mat-icon>
-      <small>{{ plane?.idPlane }}</small>
+      <small>{{ plane[0]?.idPlane }}</small>
     </div>
     <button mat-raised-button (click)="exit()">Выйти</button>
   </div>
